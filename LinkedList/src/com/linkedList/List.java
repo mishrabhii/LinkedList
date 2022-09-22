@@ -7,11 +7,14 @@ public class List {
 	public static void main(String[] args) {
 		System.out.println("Create a LinkedList of 56, 30, 70");
 
-		UC4 nodeMethods = new UC4();
+		List nodeMethods = new List();
 		nodeMethods.addNode(56);
+		nodeMethods.addNode(30);
 		nodeMethods.addNode(70);
 		nodeMethods.printLinkedList();	
-		nodeMethods.insert(30);
+
+		System.out.println("\nAfter deleting the first element");
+		nodeMethods.pop(56);
 		nodeMethods.printLinkedList();
 	}
 
@@ -37,6 +40,15 @@ public class List {
 
 		newNode.next = thisNode.next;
 		thisNode.next = newNode;
+	}
+
+	public void pop(int dataToRemove) {
+		Node thisNode = head;
+
+		if (dataToRemove == head.data) {
+			thisNode = head.next;
+			head = thisNode;
+		}
 	}
 
 	public void printLinkedList() {
