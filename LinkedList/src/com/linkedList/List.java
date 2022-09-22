@@ -8,8 +8,8 @@ public class List {
 		System.out.println("Create a LinkedList of 56, 30, 70");
 
 		List nodeMethods = new List();
-		nodeMethods.addNode(70);
 		nodeMethods.addNode(30);
+		nodeMethods.addNode(70);
 		nodeMethods.addNode(56);
 		nodeMethods.printLinkedList();	
 	}
@@ -22,10 +22,8 @@ public class List {
 			tail = newNode;
 		}
 		else {
-			Node temporary = head;
-			head.previous = newNode;
-			head = newNode;
-			head.next = temporary;
+			tail.next = newNode;
+			tail = newNode;
 		}
 	}
 
