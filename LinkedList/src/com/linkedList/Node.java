@@ -1,37 +1,32 @@
 package com.linkedList;
 
-public class Node {
-	Node previous;
-	int data;
-	Node next;
-	
-	public Node(int data) {
-		this.previous = previous;
+public class Node<T> {
+	T data;
+	Node <T> next;
+
+	public Node(T data) {
 		this.data = data;
-		this.next = next;
+		this.next = null;
 	}
-	
+
 	public Node() {
-		
+
 	}
 
-	public Node getPrevious() {
-		return previous;
+	public T getData() {
+		return data;
 	}
 
-	public void setPrevious(Node previous) {
-		this.previous = previous;
+	public void setData(T data) {
+		this.data = data;
 	}
 
-	public Node getNext() {
+	public Node<T> getNext() {
 		return next;
 	}
 
-	public void setNext(Node next) {
+	public void setNext(Node<T> next) {
 		this.next = next;
 	}
-	
+
 }
-
-
-	
