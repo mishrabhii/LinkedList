@@ -1,6 +1,7 @@
 package com.linkedList;
 
 public class List {
+
 	Node head;
 	Node tail;
 
@@ -10,12 +11,14 @@ public class List {
 		List nodeMethods = new List();
 		nodeMethods.addNode(56);
 		nodeMethods.addNode(30);
+		nodeMethods.addNode(40);
 		nodeMethods.addNode(70);
 		nodeMethods.printLinkedList();	
 
-		System.out.println("\nInserting 40 after 30 in the Linked List.");
-		nodeMethods.insert(40, 30);
+		System.out.println("\nDeleting 40 from the Linked List.");
+		nodeMethods.pop(40);
 		nodeMethods.printLinkedList();
+		nodeMethods.printSize();
 	}
 
 	public void addNode(int element) {
@@ -51,6 +54,21 @@ public class List {
 
 		newNode.next = thisNode.next;
 		thisNode.next = newNode;
+	}
+
+	public void printSize() {
+		Node thisNode = head;
+		int count = 0;
+
+		if (thisNode == null) 
+			System.out.println("\nThe Linked list is empty.\n");
+		else {
+			while (thisNode != null) {
+				count++;
+				thisNode = thisNode.next;
+			}
+			System.out.println("\nSize of the Linked List : " + count);
+		}
 	}
 
 	public void pop(int dataToRemove) {
