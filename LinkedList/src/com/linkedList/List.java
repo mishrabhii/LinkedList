@@ -13,8 +13,8 @@ public class List {
 		nodeMethods.addNode(70);
 		nodeMethods.printLinkedList();	
 
-		System.out.println("\nAfter deleting the first element");
-		nodeMethods.pop(56);
+		System.out.println("\nAfter deleting the last element");
+		nodeMethods.pop(70);
 		nodeMethods.printLinkedList();
 	}
 
@@ -48,6 +48,14 @@ public class List {
 		if (dataToRemove == head.data) {
 			thisNode = head.next;
 			head = thisNode;
+		}
+		else {
+			Node previous = null;
+			while (thisNode.data != dataToRemove) {
+				previous = thisNode;
+				thisNode = thisNode.next;
+			}
+			previous.next = thisNode.next;	
 		}
 	}
 
